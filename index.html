@@ -1,0 +1,426 @@
+<!-- 
+
+Hello Camper!
+
+Please read the README below in the JS Editor before beginning. Feel free to delete this message once you have read it. Good luck and Happy Coding! 
+
+- The freeCodeCamp Team 
+
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title></title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  
+@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&family=Sora:wght@300;500;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@100&display=swap');
+:root{
+    --main-color:#051367;
+    --second-color:#2D31FA;
+    --third-color:#5D8BF4;
+    --text-color:#DFF6FF;
+}
+
+h1{font-size:50pt; font-family: 'Sora',sans-serif;font-weight: bold; line-height:90%}
+h2{font-size:30pt; font-family: 'Sora',sans-serif; font-weight:medium;}
+h3{font-size:20pt; font-family: 'Sora',sans-serif; font-weight:medium;}
+h4{font-size:12pt;}
+h5{font-size:10pt;}
+h6{font-size:7pt;}
+p{font-size:14pt;}
+*{
+    margin:0;
+    padding:0;
+}
+html{
+    box-sizing:border-box;
+    scroll-behavior: smooth;
+    color:var(--text-color);
+    font-family:'Hahmlet',serif;
+}
+
+a{
+    text-decoration:none;
+    color:var(--text-color);
+}
+#navbar{
+   left:0;
+   right:0;
+   top:0;
+   height: 50px;
+   background-color:var(--second-color);
+   display:flex;
+   position:fixed;
+   z-index:100;
+   justify-content:center;
+   align-items:center;
+}
+.nav-ul{
+    width:30%;
+    height:100%;
+    display:flex;
+    justify-content:space-around;
+    font-size:1em;
+    list-style:none;
+    align-items: center;
+}
+#navbar .nav-ul .nav-li{
+    width:fit-content;
+}
+.nav-li a{
+    text-decoration:none;
+    color:white;
+    transition:.5s;
+}
+.nav-ul li a:hover {
+    color:yellow;
+}
+
+.role{
+  font-family: 'Poppins',sans-serif;
+  
+}
+.welcome-sec{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  margin-top: 50px;
+    height:50vh;
+    background: rgb(93,139,244);
+    background: linear-gradient(120deg, rgba(5,19,103,0.7) 30%,rgba(93,139,244,0.4) 100%), url("https://drive.google.com/uc?export=view&id=1TpH5akBnPlZLSKDioM-_7WsiHg5FYiWQ");
+    background-size:cover;
+    
+}
+.welcome-sec header{
+  height:10%;
+  margin-top:80px;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction : column;
+  
+}
+.welcome-sec .photo{
+    width:50%;
+    height:50%;
+    display: flex;
+    background: url("/profile.jpg");
+    background-color: rgba(93,139,244,0.2);
+    background-blend-mode: multiply;
+    background-position: center;
+    background-size: 120%;
+    justify-content: center;
+    margin-top:5%;
+    border:2px black solid;
+    border-radius:100%;
+}
+
+.caption{
+  margin-top:5%;
+  text-align: center;
+  
+}
+.welcome-sec span{
+    color:var(--third-color);
+}
+.about-sec{
+    display:grid;
+    grid-template-areas: "judul judul judul" "text1 text2 text3" 'text1 text2 text3';
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows:100px 200px 300px;
+    padding:100px 50px;
+    background-color:#5a7ffa;
+}
+.about-sec h1,.about-text{
+    text-align:center;
+    justify-content: center;
+    padding:20px;
+    color:black;
+    display:flex;
+    align-items: center;
+}
+.about-text a{
+    color:yellow;
+    transition: .3s;
+}
+.about-text a:hover{
+    color:#ff6c6c;
+    font-size: 15pt;
+}
+.about-sec h1{
+    grid-area:judul;
+    background-color:#88a4ff;
+    color:#030b36;
+}
+.about-text:nth-child(2){
+    grid-area:text1;
+    background-color:#2d30fada;
+    color:var(--text-color);
+}
+.about-text:nth-child(3){
+    grid-area:text2;
+    background-color:var(--third-color);
+}
+.about-text:nth-child(4){
+    grid-area:text3;
+    background-color:#2d30fada;
+    color:var(--text-color);
+}
+.projects-sec{
+    box-sizing:border-box;
+    min-height:600px;
+    background-color:#88a4ff;
+    padding:100px 0px 100px;
+    display:flex;
+    justify-content:center;
+
+    color:#030b36;
+}
+.project-container{
+    width:80%;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 100px repeat(2,1fr);
+    grid-template-areas:
+        "judul judul judul judul"
+        " . prj1 prj2 ."
+        " . prj3 prj4 .";
+    gap: 10px;
+    place-items: center;
+    background-color: #2D31FA;
+    padding-bottom:100px;
+}
+.project-container h1{grid-area:title;}
+.project-grid{
+    box-shadow: black 1px 5px 10px;
+    background-color:var(--third-color);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:300px;
+    color:#030b36;
+    font-weight:bold;
+    transition:.5s;
+}
+.project-container h1{
+    grid-area:judul;
+    color:var(--text-color);
+}
+.project-grid:nth-child(2){
+    grid-area:prj1;
+}
+.project-grid:nth-child(3){
+    grid-area:prj2;
+}
+.project-grid:nth-child(4){
+    grid-area:prj3;
+}
+.project-grid:nth-child(5){
+    grid-area:prj4;
+}
+.project-tile{
+    width:100%;
+    height:200px;
+    background-size:100% 200px;
+}
+.project-grid p{
+    height:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align: center;
+    transition:.5s;
+}
+.project-grid:hover{
+    transform: scale(1.05);
+}
+.project-grid p:hover{
+    color:var(--text-color);
+}
+
+.contract-sec{
+    height:200px;
+    background-color:var(--second-color);
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    font-size:14pt;
+    padding-left:20px;
+    padding-right:20px;
+}
+.contract-sec h2{
+    margin:20px 0px 30px;
+}
+.contact-container{
+    display:flex;
+    height:50%;
+    gap:20px;
+}
+
+.contact-container a{
+    transition: .5s;
+}
+.contact-container a i{
+  display: flex;
+  justify-content: center;
+}
+.contact-container a:hover{
+    color:#ffe70f;
+    transform: scale(1.1);
+}
+
+.foot-sec{
+    background-color:var(--main-color);
+    height: 100px;
+    text-align:center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Sora',sans-serif;
+    font-weight: 300;
+}
+.foot-sec{
+    font-weight: 100;
+}
+/*@media (max-width:900px){
+    .welcome-sec header{
+        padding:0px 5%;
+    }
+    .welcome-sec .photo{
+        height:10%;
+        width:60%;
+    }
+    .project-container{
+        width:100%;
+    }
+    .projects-sec{
+        padding:0;
+    }
+}*/
+
+@media (max-width:650px){
+  h1{font-size: 30pt;}
+  h2{
+    font-size:20pt;
+  }
+  h3{
+    font-size:12pt;
+  }
+    .welcome-sec{
+      margin:0;
+        flex-direction: column;
+        height: 100vh;
+    }
+    .welcome-sec header{
+        padding:0;
+        text-align: center;
+        width:100%;
+        height:20%;
+    }
+    .welcome-sec .photo{
+        width:300px;
+        height:300px;
+        margin-bottom:20px;
+    }
+    .about-sec{
+        grid-template-rows:100px repeat(3,400px);
+        grid-template-columns:1fr;
+        grid-template-areas: "judul" "text1" "text2" "text3";
+        padding:0;
+
+    }
+    .project-container{
+        grid-template-columns: 1fr;
+        grid-template-rows:auto;
+        grid-template-areas: "judul" "prj1" "prj2" "prj3" "prj4";
+    }
+    .project-grid{
+        width:80%;
+    }
+    #navbar{
+        justify-content:center;
+    }
+    .nav-ul{
+        width:50%;
+        justify-content: space-between;
+        gap:10px;
+    }
+}
+</style>
+</head>
+<body>
+    <nav id="navbar">
+        <ul class="nav-ul">
+            <li class="nav li"><a class="Home" href="#welcome-section">Home
+                </a>
+            </li>
+            <li class="nav li"><a class="about" href="#about">About</a></li>
+            <li class="nav li"><a class="project" href="#projects">Project</a></li>
+        </ul>
+    </nav>
+    <main id="main-doc">
+
+        <section class="main-section welcome-sec" id="welcome-section">
+            <header><h1>Hi, i am</h1>
+            <h1><span>Jucky</span></h1><h2>(Naufal Prihastyo)</h2><br></header>
+            <div class="photo"></div>
+            <div class="caption">
+            <h3 class="role">A Musician | Music Producer | Software developer | Physics Enthusiast</h3>
+            <h2>Welcome to my personal portfolio web</h2></div>
+        </section>
+        <section class="main-section about-sec" id="about">
+            <h1>about</h1>
+                <div class="about-text"><p>Hello Im Jucky, When this page was made, i was still learn about web developing and programming, so please understand if there are still many shortcomings in this website that I made</p></div>
+                <div class="about-text"><p>You can see my last website project below, I made several websites project include tribute page, form page, landing page, and this portfolio page </p></div>
+                <div class="about-text"><p>I'm also currently working on an nft project that I made myself, you can visit it <a href="https://opensea.io/collection/juckyartdonuts">here</a>. In that NFT ptoject i make various donut art with 3d software</p>
+            </div>
+        </section>
+        <section class="main-section projects-sec" id="projects">
+            <div class="project-container">
+                <h1>My project</h1>
+                <a href="https://codepen.io/naufal-a-a-p/full/eYEQBbw" class="project-grid">
+                    <div class="project-tile" style="background-image:url('https://drive.google.com/uc?export=view&id=1_nHxlY4sGqVDlllTqedXkXHNiF8OgoG1');"></div>
+                    <p class="project-title">
+                        Tribute Page
+                    </p>
+                </a>
+                <a href="https://codepen.io/naufal-a-a-p/full/eYEQBbw" class="project-grid">
+                    <div class="project-tile" style="background-image:url('https://drive.google.com/uc?export=view&id=1tddISfaIUsIycvrK874c_m1A1ScQprsc');"></div>
+                    <p class="project-title">
+                        Form Page
+                    </p>
+                </a>
+                <a href="https://codepen.io/naufal-a-a-p/full/oNoJWmV" class="project-grid">
+                    <div class="project-tile" style="background-image:url('https://drive.google.com/uc?export=view&id=1YoA4JddkzJu65130IDUTNMjs4qvS3FDL');"></div>
+                    <p class="project-title">
+                        Documentation Page
+                    </p>
+                </a>
+                <a href="https://codepen.io/naufal-a-a-p/full/NWvZXmB" class="project-grid">
+                    <div class="project-tile" style="background-image:url('https://drive.google.com/uc?export=view&id=1BdFAn0OhOkgk9Bd4WV0CVh3pibyz2FtW');"></div>
+                    <p class="project-title">
+                        Landing Page
+                    </p>
+                </a>
+            </div>
+        </section>
+        <section class="main-section contract-sec"id="contact">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <a href="https://www.facebook.com/naufal.prihastyo.7" class="contact-link" target="_blank"><i class="fa fa-facebook"></i> Facebook</a>
+                <a href="https://github.com/Naufal-A-A-P" class="contact-link" id="profile-link" target="_blank">
+                <i class="fa fa-github "></i> Github</a>
+                <a href="https://www.twitter.com/@naufalprihastyo" class="contact-link" target="_blank"><i class="fa fa-twitter"></i> Twitter</a>
+                <a href="https://www.instagram.com/naapvy" class="contact-link" target="_blank"><i class="fa fa-instagram"></i> Instagram</a>
+            </div>
+        </section>
+        <section class="main-section foot-sec" id="foot">
+            <p>This portfolio just a prototype for education only</p>
+            <h5>Copyright 2022 by Jucky</h5>
+        </section>
+    </main>
+</body>
+</html>
